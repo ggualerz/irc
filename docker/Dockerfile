@@ -15,6 +15,6 @@ RUN chmod +x /app/ircserv
 RUN apt-get update && \
     apt-get install -y valgrind && \
     apt-get clean
-
+EXPOSE 6667
 # Run the ircserv program with valgrind and the specified arguments
-CMD ["valgrind", "/app/ircserv", "42password", "6667"]
+CMD ["valgrind", "/app/ircserv", "6667", "42password"]
